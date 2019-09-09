@@ -73,9 +73,11 @@ function App() {
   const [shows, setShows] = React.useState([]);
 
   const fetchShow = async () => {
-    const response = await fetch(
-      "http://api.tvmaze.com/shows/318?embed[]=episodes&embed[]=nextepisode&embed[]=previousepisode"
-    );
+    // const response = await fetch(
+    //   "http://api.tvmaze.com/shows/318?embed[]=episodes&embed[]=nextepisode&embed[]=previousepisode"
+    // );
+
+    const response = { ok: true };
     if (response.ok) {
       // const data = await response.json();
       const data = {
