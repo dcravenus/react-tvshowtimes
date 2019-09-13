@@ -68,7 +68,7 @@ function App() {
   const [shows, setShows] = React.useState([]);
 
   const fetchShow = async id => {
-    const response = await fetch(".netlify/getShow/" + id);
+    const response = await fetch(".netlify/functions/getShow?id=" + id);
 
     if (response.ok) {
       console.log(response.data);
