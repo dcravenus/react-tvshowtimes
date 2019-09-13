@@ -69,8 +69,9 @@ function App() {
   const fetchShow = async id => {
     const response = await fetch(".netlify/functions/getShow?id=" + id);
 
-    if (response.ok && response.data) {
-      setShows([response.data]);
+    if (response.ok) {
+      const data = await response.json();
+      setShows([data]);
     }
   };
 
