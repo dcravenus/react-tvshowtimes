@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
@@ -70,8 +69,7 @@ function App() {
   const fetchShow = async id => {
     const response = await fetch(".netlify/functions/getShow?id=" + id);
 
-    if (response.ok) {
-      console.log(response.data);
+    if (response.ok && response.data) {
       setShows([response.data]);
     }
   };
