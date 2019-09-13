@@ -4,15 +4,21 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.17",
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "netlify-lambda": "^1.6.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "request": "^2.88.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp -R functions build",
+    "build": "react-scripts build && npm run build-func && cp -R functions-build build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "func": "netlify-lambda serve ./functions",
+    "build-func": "netlify-lambda build ./functions"
   },
   "eslintConfig": {
     "extends": "react-app"
